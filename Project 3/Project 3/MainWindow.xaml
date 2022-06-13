@@ -7,6 +7,66 @@
         mc:Ignorable="d"
         Title="est" Height="450" Width="800">
     <Grid>
-        <TextBlock>hoi</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="cmbtabel" Height="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold">
+            <ComboBoxItem FontSize="12" IsSelected="True">Partij</ComboBoxItem>
+            <ComboBoxItem FontSize="12">Standpunt</ComboBoxItem>
+            <ComboBoxItem FontSize="12">Verkiezing partijen</ComboBoxItem>
+            <ComboBoxItem FontSize="12">Thema</ComboBoxItem>
+            <ComboBoxItem FontSize="12">Verkiezing</ComboBoxItem>
+            <ComboBoxItem FontSize="12">Verkiezingsoort</ComboBoxItem>
+        </ComboBox>
+
+        <DataGrid  x:Name="dgstandpunt" Grid.Column="2" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding standpunt_id}" Header="Partij ID"/>
+                <DataGridTextColumn Binding="{Binding thema_id}" Header="Naam"/>
+                <DataGridTextColumn Binding="{Binding standpunt}" Header="Adres"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <UniformGrid Grid.Row="1" Grid.Column="2" Columns="3">
+            <Button Content="Maak aan"/>
+            <Button Content="Wijzig"/>
+            <Button Content="Delete"/>
+        </UniformGrid>
+
+        <DataGrid  x:Name="dgpartij" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding partij_id}" Header="Partij ID"/>
+                <DataGridTextColumn Binding="{Binding naam}" Header="Naam"/>
+                <DataGridTextColumn Binding="{Binding adres}" Header="Adres"/>
+                <DataGridTextColumn Binding="{Binding postcode}" Header="Postcode"/>
+                <DataGridTextColumn Binding="{Binding gemeente}" Header="Gemeente"/>
+                <DataGridTextColumn Binding="{Binding emailadres}" Header="Email"/>
+                <DataGridTextColumn Binding="{Binding telefoonnummer}" Header="Telefoonnummer"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <UniformGrid Grid.Row="1" Grid.Column="1" Columns="3">
+            <Button Content="Maak aan"/>
+            <Button Content="Wijzig"/>
+            <Button Content="Delete"/>
+        </UniformGrid>
+
+        <DataGrid  x:Name="dgverkiezingPartij" Grid.Column="3" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding partij_id}" Header="Partij ID"/>
+                <DataGridTextColumn Binding="{Binding verkiezingID}" Header="Naam"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <UniformGrid Grid.Row="1" Grid.Column="3" Columns="3">
+            <Button Content="Maak aan"/>
+            <Button Content="Wijzig"/>
+            <Button Content="Delete"/>
+        </UniformGrid>
+
     </Grid>
 </Window>
