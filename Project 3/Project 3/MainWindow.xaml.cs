@@ -46,5 +46,42 @@ namespace Project_3
                     dgstandpunt.ItemsSource = standpunt.DefaultView;
                 }
         }
+        #region create
+        private void CreatePartij_Click(object sender, RoutedEventArgs e)
+        {
+            createpartij create = new createpartij();
+            create.Show();
+            fillgrid();
+        }
+        private void CreateStandpunt_Click(object sender, RoutedEventArgs e)
+        {
+            createstandpunt create = new createstandpunt();
+            create.Show();
+            fillgrid();
+        }
+        #endregion
+
+        #region update
+        private void UpdatePartij_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgpartij.SelectedItem as DataRowView;
+
+            editpartij edit = new editpartij(selectedRow);
+            edit.ShowDialog();
+            fillgrid();
+        }
+        private void UpdateStandpunt_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgstandpunt.SelectedItem as DataRowView;
+
+            editstandpunt edit = new editstandpunt(selectedRow);
+            edit.ShowDialog();
+            fillgrid();
+        }
+        #endregion
+
+        #region delete
+
+        #endregion
     }
 }

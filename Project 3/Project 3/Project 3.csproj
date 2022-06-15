@@ -56,6 +56,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="createpartij.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="createstandpunt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editpartij.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editstandpunt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,6 +81,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Verkiezingdb.cs" />
+    <Compile Include="createpartij.xaml.cs">
+      <DependentUpon>createpartij.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="createstandpunt.xaml.cs">
+      <DependentUpon>createstandpunt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editpartij.xaml.cs">
+      <DependentUpon>editpartij.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editstandpunt.xaml.cs">
+      <DependentUpon>editstandpunt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

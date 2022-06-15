@@ -27,3 +27,11 @@ C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Proj
 C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.csproj.CopyComplete
 C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.exe
 C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.pdb
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\createpartij.g.cs
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\createpartij.baml
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\createstandpunt.g.cs
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\createstandpunt.baml
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\editpartij.g.cs
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\editpartij.baml
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\editstandpunt.g.cs
+C:\Users\jaimy\source\repos\ps218180\Project3\Project 3\Project 3\obj\Debug\editstandpunt.baml

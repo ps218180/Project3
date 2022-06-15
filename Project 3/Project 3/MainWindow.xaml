@@ -28,16 +28,26 @@
 
         <DataGrid  x:Name="dgstandpunt" Grid.Column="2" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding standpunt_id}" Header="Partij ID"/>
-                <DataGridTextColumn Binding="{Binding thema_id}" Header="Naam"/>
-                <DataGridTextColumn Binding="{Binding standpunt}" Header="Adres"/>
+                <DataGridTextColumn Binding="{Binding standpunt_id}" Header="Standpunt Id"/>
+                <DataGridTextColumn Binding="{Binding thema_id}" Header="Thema Id"/>
+                <DataGridTextColumn Binding="{Binding standpunt}" Header="Standpunt"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig" Click="UpdateStandpunt_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <UniformGrid Grid.Row="1" Grid.Column="2" Columns="3">
-            <Button Content="Maak aan"/>
-            <Button Content="Wijzig"/>
-            <Button Content="Delete"/>
-        </UniformGrid>
+        <Button Content="Maak aan" Grid.Row="1" Grid.Column="2"  Click="CreateStandpunt_Click"/>
 
         <DataGrid  x:Name="dgpartij" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -48,18 +58,28 @@
                 <DataGridTextColumn Binding="{Binding gemeente}" Header="Gemeente"/>
                 <DataGridTextColumn Binding="{Binding emailadres}" Header="Email"/>
                 <DataGridTextColumn Binding="{Binding telefoonnummer}" Header="Telefoonnummer"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig" Click="UpdatePartij_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <UniformGrid Grid.Row="1" Grid.Column="1" Columns="3">
-            <Button Content="Maak aan"/>
-            <Button Content="Wijzig"/>
-            <Button Content="Delete"/>
-        </UniformGrid>
+        <Button Content="Maak aan" Grid.Row="1" Grid.Column="1" Click="CreatePartij_Click"/>
 
-        <DataGrid  x:Name="dgverkiezingPartij" Grid.Column="3" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid  x:Name="dgverkiezingPartij" Grid.Column="3" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding partij_id}" Header="Partij ID"/>
-                <DataGridTextColumn Binding="{Binding verkiezingID}" Header="Naam"/>
+                <DataGridTextColumn Binding="{Binding verkiezingID}" Header="Verkiezing ID"/>
             </DataGrid.Columns>
         </DataGrid>
         <UniformGrid Grid.Row="1" Grid.Column="3" Columns="3">
