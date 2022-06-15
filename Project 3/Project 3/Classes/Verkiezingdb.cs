@@ -29,7 +29,7 @@ namespace Project_3.Classes
                 MySqlDataReader reader = command.ExecuteReader();
                 result.Load(reader);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -195,8 +195,30 @@ namespace Project_3.Classes
         #endregion
 
         #region delete
-        #endregion
+        public bool DeletePartij(string id)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "DELETE FROM `partij` WHERE `partij`.`partij_id` = @partij_id;";
+                command.Parameters.AddWithValue("@partij_id", id);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                succes = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verwijder of pas eerst de drivers aan die bijhoorend zijn bij het team dat u wilt verwijderen");
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+            #endregion
 
-        #endregion
+            #endregion
+        }
     }
 }

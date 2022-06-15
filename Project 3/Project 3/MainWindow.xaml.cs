@@ -81,7 +81,20 @@ namespace Project_3
         #endregion
 
         #region delete
+        private void DeletePartij_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgpartij.SelectedItem as DataRowView;
 
+            if (Verkiezingdb.DeletePartij(selectedRow["partij_id"].ToString()))
+            {
+                MessageBox.Show($"team {selectedRow["partij_id"]} verwijderd");
+            }
+            else
+            {
+                MessageBox.Show($"Verwijderen van {selectedRow["partij_id"]} mislukt");
+            }
+            fillgrid();
+        }
         #endregion
     }
 }

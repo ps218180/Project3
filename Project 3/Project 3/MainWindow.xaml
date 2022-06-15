@@ -68,7 +68,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Verwijder"/>
+                            <Button Content="Verwijder" Click="DeletePartij_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -76,17 +76,27 @@
         </DataGrid>
         <Button Content="Maak aan" Grid.Row="1" Grid.Column="1" Click="CreatePartij_Click"/>
 
-            <DataGrid  x:Name="dgverkiezingPartij" Grid.Column="3" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
+        <DataGrid  x:Name="dgverkiezingPartij" Grid.Column="3" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding partij_id}" Header="Partij ID"/>
                 <DataGridTextColumn Binding="{Binding verkiezingID}" Header="Verkiezing ID"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <UniformGrid Grid.Row="1" Grid.Column="3" Columns="3">
-            <Button Content="Maak aan"/>
-            <Button Content="Wijzig"/>
-            <Button Content="Delete"/>
-        </UniformGrid>
+        <Button Grid.Row="1" Grid.Column="3" Content="Maak aan"/>
 
     </Grid>
 </Window>
