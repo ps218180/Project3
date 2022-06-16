@@ -12,7 +12,7 @@ namespace Project_3.Classes
     class Verkiezingdb
     {
         #region fields
-        MySqlConnection _connection = new MySqlConnection("Port=3309;Server=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
+        MySqlConnection _connection = new MySqlConnection("Server=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
         #endregion
 
         #region functions
