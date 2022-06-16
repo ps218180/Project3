@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_3"
         mc:Ignorable="d"
-        Title="est" Height="450" Width="800">
+        Title="verkiezingen" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -98,12 +98,12 @@
         
         <DataGrid  x:Name="dgThema" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding thema_id}" Header="Thema ID"/>
+                <DataGridTextColumn Binding="{Binding thema_ID}" Header="ThemaID"/>
                 <DataGridTextColumn Binding="{Binding thema}" Header="Thema"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Wijzig"/>
+                            <Button Content="Wijzig" Click="UpdateThema_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -116,7 +116,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="themabtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
+        <Button x:Name="themabtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden" Click="CreateThema_Click"/>
 
         <DataGrid  x:Name="dgVerkiezing" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
             <DataGrid.Columns>

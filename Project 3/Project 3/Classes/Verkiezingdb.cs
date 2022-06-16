@@ -202,6 +202,28 @@ namespace Project_3.Classes
             }
             return succes;
         }
+        public bool InsertThema(string thema)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO `thema` (`thema`) VALUES (@thema);";
+                command.Parameters.AddWithValue("@thema", thema);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                succes = (nrOfRowsAffected != 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+        }
         #endregion
 
         #region update
@@ -245,6 +267,29 @@ namespace Project_3.Classes
                 command.Parameters.AddWithValue("@standpunt_id", standpuntid);
                 command.Parameters.AddWithValue("@themaid", themaid);
                 command.Parameters.AddWithValue("@adres", standpunt);
+                int nraffected = command.ExecuteNonQuery();
+                succes = (nraffected != 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+        }
+        public bool UpdateThema(int thema_id, string thema)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "UPDATE `thema` SET `thema` = @thema, WHERE `thema`.`thema_ID` = @thema_ID;";
+                command.Parameters.AddWithValue("@thema_ID", thema_id);
+                command.Parameters.AddWithValue("@naam", thema);
                 int nraffected = command.ExecuteNonQuery();
                 succes = (nraffected != 0);
             }

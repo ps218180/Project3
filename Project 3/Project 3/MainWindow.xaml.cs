@@ -92,10 +92,16 @@
                 create.Show();
                 standpuntgrid();
             }
-            #endregion
+        private void CreateThema_Click(object sender, RoutedEventArgs e)
+        {
+            Themacreate create = new Themacreate();
+            create.Show();
+            themagrid();
+        }
+        #endregion
 
-            #region update
-            private void UpdatePartij_Click(object sender, RoutedEventArgs e)
+        #region update
+        private void UpdatePartij_Click(object sender, RoutedEventArgs e)
             {
                 DataRowView selectedRow = dgpartij.SelectedItem as DataRowView;
 
@@ -111,10 +117,18 @@
                 edit.ShowDialog();
                 standpuntgrid();
             }
-            #endregion
+        private void UpdateThema_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgThema.SelectedItem as DataRowView;
 
-            #region delete
-            private void DeletePartij_Click(object sender, RoutedEventArgs e)
+            EditThema edit = new EditThema(selectedRow);
+            edit.ShowDialog();
+            themagrid();
+        }
+        #endregion
+
+        #region delete
+        private void DeletePartij_Click(object sender, RoutedEventArgs e)
             {
                 DataRowView selectedRow = dgpartij.SelectedItem as DataRowView;
 

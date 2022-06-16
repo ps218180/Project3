@@ -73,3 +73,7 @@ C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Proj
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.csproj.CopyComplete
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.exe
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Project 3.pdb
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Themacreate.g.cs
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Themacreate.baml
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditThema.g.cs
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditThema.baml
