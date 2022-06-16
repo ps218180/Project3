@@ -94,7 +94,73 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
+        <Button x:Name="verkiezingpartijbtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden" />
+        
+        <DataGrid  x:Name="dgThema" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding thema_id}" Header="Thema ID"/>
+                <DataGridTextColumn Binding="{Binding thema}" Header="Thema"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="themabtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
 
+        <DataGrid  x:Name="dgVerkiezing" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding verkiezing_id}" Header="verkiezing ID"/>
+                <DataGridTextColumn Binding="{Binding verkiezingsoortID}" Header="verkiezingsoortID"/>
+                <DataGridTextColumn Binding="{Binding datum}" Header="datum"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="verkiezingbtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
+
+        <DataGrid  x:Name="dgVerkiezingsoort" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding verkiezingsoort_id}" Header="verkiezingsoort ID"/>
+                <DataGridTextColumn Binding="{Binding verkiezingsoort}" Header="verkiezing soort"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="verkiezingsoortbtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
     </Grid>
 </Window>

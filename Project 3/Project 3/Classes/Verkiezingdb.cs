@@ -83,6 +83,72 @@ namespace Project_3.Classes
             }
             return result;
         }
+        public DataTable SelectThema()
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "SELECT * FROM thema";
+                MySqlDataReader reader = command.ExecuteReader();
+                result.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
+        public DataTable SelectVerkiezing()
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "SELECT * FROM verkiezing";
+                MySqlDataReader reader = command.ExecuteReader();
+                result.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
+        public DataTable SelectVerkiezingsoort()
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "SELECT * FROM verkiezingsoort";
+                MySqlDataReader reader = command.ExecuteReader();
+                result.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
 
         #endregion
 

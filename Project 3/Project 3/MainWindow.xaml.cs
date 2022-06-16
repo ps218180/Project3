@@ -36,8 +36,6 @@
                     {
                     dgverkiezingPartij.ItemsSource = verkiezingpartij.DefaultView;
                     }
-                
-                
             }
             private void partijgrid()
             {
@@ -55,8 +53,34 @@
                     dgstandpunt.ItemsSource = standpunt.DefaultView;
                 }
             }
-            #region create
-            private void CreatePartij_Click(object sender, RoutedEventArgs e)
+            private void themagrid()
+        {
+            DataTable thema = Verkiezingdb.SelectThema();
+            if (thema != null)
+            {
+                dgThema.ItemsSource = thema.DefaultView;
+            }
+        }
+        private void verkiezinggrid()
+        {
+            DataTable verkiezing = Verkiezingdb.SelectVerkiezing();
+            if (verkiezing != null)
+            {
+                dgVerkiezing.ItemsSource = verkiezing.DefaultView;
+            }
+
+        }
+        private void verkiezingsoortgrid()
+        {
+            DataTable verkiezingsoort = Verkiezingdb.SelectVerkiezingsoort();
+            if (verkiezingsoort != null)
+            {
+                dgVerkiezingsoort.ItemsSource = verkiezingsoort.DefaultView;
+            }
+
+        }
+        #region create
+        private void CreatePartij_Click(object sender, RoutedEventArgs e)
             {
                 createpartij create = new createpartij();
                 create.Show();
@@ -113,28 +137,132 @@
                 dgpartij.ItemsSource = null;
                 dgstandpunt.ItemsSource = null;
                 dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
                 partijgrid();
                 dgpartij.Visibility = Visibility.Visible;
                 dgstandpunt.Visibility = Visibility.Hidden;
                 dgverkiezingPartij.Visibility = Visibility.Hidden;
+                dgThema.Visibility = Visibility.Hidden;
+                dgVerkiezing.Visibility = Visibility.Hidden;
+                dgVerkiezingsoort.Visibility = Visibility.Hidden;
                 standpuntbtn.Visibility = Visibility.Hidden;
                 partijbtn.Visibility = Visibility.Visible;
+                verkiezingpartijbtn.Visibility = Visibility.Hidden;
+                themabtn.Visibility = Visibility.Hidden;
+                verkiezingbtn.Visibility = Visibility.Hidden;
+                verkiezingsoortbtn.Visibility = Visibility.Hidden;
             }
             else if (cmbtabel.SelectedIndex == 1)
             {
-                dgstandpunt.ItemsSource = null;
                 dgpartij.ItemsSource = null;
+                dgstandpunt.ItemsSource = null;
                 dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
                 standpuntgrid();
                 dgpartij.Visibility = Visibility.Hidden;
                 dgstandpunt.Visibility = Visibility.Visible;
                 dgverkiezingPartij.Visibility = Visibility.Hidden;
-                standpuntbtn.Visibility = Visibility.Visible;
+                dgThema.Visibility = Visibility.Hidden;
+                dgVerkiezing.Visibility = Visibility.Hidden;
+                dgVerkiezingsoort.Visibility = Visibility.Hidden;
                 partijbtn.Visibility = Visibility.Hidden;
+                standpuntbtn.Visibility = Visibility.Visible;
+                verkiezingpartijbtn.Visibility = Visibility.Hidden;
+                themabtn.Visibility = Visibility.Hidden;
+                verkiezingbtn.Visibility = Visibility.Hidden;
+                verkiezingsoortbtn.Visibility = Visibility.Hidden;
             }
             else if (cmbtabel.SelectedIndex == 2)
             {
-
+                dgpartij.ItemsSource = null;
+                dgstandpunt.ItemsSource = null;
+                dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
+                verkiezingpartijgrid();
+                dgpartij.Visibility = Visibility.Hidden;
+                dgstandpunt.Visibility = Visibility.Hidden;
+                dgverkiezingPartij.Visibility = Visibility.Visible;
+                dgThema.Visibility = Visibility.Hidden;
+                dgVerkiezing.Visibility = Visibility.Hidden;
+                dgVerkiezingsoort.Visibility = Visibility.Hidden;
+                partijbtn.Visibility = Visibility.Hidden;
+                standpuntbtn.Visibility = Visibility.Hidden;
+                verkiezingpartijbtn.Visibility = Visibility.Visible;
+                themabtn.Visibility = Visibility.Hidden;
+                verkiezingbtn.Visibility = Visibility.Hidden;
+                verkiezingsoortbtn.Visibility = Visibility.Hidden;
+            }
+            else if(cmbtabel.SelectedIndex == 3)
+            {
+                dgpartij.ItemsSource = null;
+                dgstandpunt.ItemsSource = null;
+                dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
+                themagrid();
+                dgpartij.Visibility = Visibility.Hidden;
+                dgstandpunt.Visibility = Visibility.Hidden;
+                dgverkiezingPartij.Visibility = Visibility.Hidden;
+                dgThema.Visibility = Visibility.Visible;
+                dgVerkiezing.Visibility = Visibility.Hidden;
+                dgVerkiezingsoort.Visibility = Visibility.Hidden;
+                partijbtn.Visibility = Visibility.Hidden;
+                standpuntbtn.Visibility = Visibility.Hidden;
+                verkiezingpartijbtn.Visibility = Visibility.Hidden;
+                themabtn.Visibility = Visibility.Visible;
+                verkiezingbtn.Visibility = Visibility.Hidden;
+                verkiezingsoortbtn.Visibility = Visibility.Hidden;
+            }
+            else if(cmbtabel.SelectedIndex == 4)
+            {
+                dgpartij.ItemsSource = null;
+                dgstandpunt.ItemsSource = null;
+                dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
+                verkiezinggrid();
+                dgpartij.Visibility = Visibility.Hidden;
+                dgstandpunt.Visibility = Visibility.Hidden;
+                dgverkiezingPartij.Visibility = Visibility.Hidden;
+                dgThema.Visibility = Visibility.Hidden;
+                dgVerkiezing.Visibility = Visibility.Visible;
+                dgVerkiezingsoort.Visibility = Visibility.Hidden;
+                partijbtn.Visibility = Visibility.Hidden;
+                standpuntbtn.Visibility = Visibility.Hidden;
+                verkiezingpartijbtn.Visibility = Visibility.Hidden;
+                themabtn.Visibility = Visibility.Hidden;
+                verkiezingbtn.Visibility = Visibility.Visible;
+                verkiezingsoortbtn.Visibility = Visibility.Hidden;
+            }
+            else if(cmbtabel.SelectedIndex == 5)
+            {
+                dgpartij.ItemsSource = null;
+                dgstandpunt.ItemsSource = null;
+                dgverkiezingPartij.ItemsSource = null;
+                dgThema.ItemsSource = null;
+                dgVerkiezing.ItemsSource = null;
+                dgVerkiezingsoort.ItemsSource = null;
+                verkiezingsoortgrid();
+                dgpartij.Visibility = Visibility.Hidden;
+                dgstandpunt.Visibility = Visibility.Hidden;
+                dgverkiezingPartij.Visibility = Visibility.Hidden;
+                dgThema.Visibility = Visibility.Hidden;
+                dgVerkiezing.Visibility = Visibility.Hidden;
+                dgVerkiezingsoort.Visibility = Visibility.Visible;
+                partijbtn.Visibility = Visibility.Hidden;
+                standpuntbtn.Visibility = Visibility.Hidden;
+                verkiezingpartijbtn.Visibility = Visibility.Hidden;
+                themabtn.Visibility = Visibility.Hidden;
+                verkiezingbtn.Visibility = Visibility.Hidden;
+                verkiezingsoortbtn.Visibility = Visibility.Visible;
             }
         }
         }
