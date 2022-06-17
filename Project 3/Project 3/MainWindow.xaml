@@ -98,7 +98,7 @@
         
         <DataGrid  x:Name="dgThema" Grid.Column="1" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Visibility="Hidden">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding thema_ID}" Header="ThemaID"/>
+                <DataGridTextColumn Binding="{Binding thema_id}" Header="ThemaID"/>
                 <DataGridTextColumn Binding="{Binding thema}" Header="Thema"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -110,7 +110,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Verwijder"/>
+                            <Button Content="Verwijder" Click="DeleteThema_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

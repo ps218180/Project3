@@ -142,6 +142,20 @@
                 }
                 partijgrid();
             }
+        private void DeleteThema_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgThema.SelectedItem as DataRowView;
+
+            if (Verkiezingdb.DeleteThema(selectedRow["thema_id"].ToString()))
+            {
+                MessageBox.Show($"team {selectedRow["thema_id"]} verwijderd");
+            }
+            else
+            {
+                MessageBox.Show($"Verwijderen van {selectedRow["thema_id"]} mislukt");
+            }
+            themagrid();
+        }
         #endregion
 
         private void cmbtabel_SelectionChanged(object sender, SelectionChangedEventArgs e)

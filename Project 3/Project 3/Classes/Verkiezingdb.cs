@@ -280,16 +280,16 @@ namespace Project_3.Classes
             }
             return succes;
         }
-        public bool UpdateThema(int thema_id, string thema)
+        public bool UpdateThema(int thema_ID, string thema)
         {
             bool succes = false;
             try
             {
                 _connection.Open();
                 MySqlCommand command = _connection.CreateCommand();
-                command.CommandText = "UPDATE `thema` SET `thema` = @thema, WHERE `thema`.`thema_ID` = @thema_ID;";
-                command.Parameters.AddWithValue("@thema_ID", thema_id);
-                command.Parameters.AddWithValue("@naam", thema);
+                command.CommandText = "UPDATE `thema` SET `thema` = @thema WHERE `thema`.`thema_id` = @thema_id;";
+                command.Parameters.AddWithValue("@thema_id", thema_ID);
+                command.Parameters.AddWithValue("@thema", thema);
                 int nraffected = command.ExecuteNonQuery();
                 succes = (nraffected != 0);
             }
@@ -330,6 +330,28 @@ namespace Project_3.Classes
             #endregion
 
             #endregion
+        }
+        public bool DeleteThema(string id)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "DELETE FROM `thema` WHERE `thema`.`thema_id` = @thema_id;";
+                command.Parameters.AddWithValue("@thema_id", id);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                succes = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verwijder of pas eerst de drivers aan die bijhoorend zijn bij het team dat u wilt verwijderen");
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Project_3
         }
         private void fillscreen(DataRowView thema)
         {
-            tbid.Text = thema["thema_ID"].ToString();
+            tbid.Text = thema["thema_id"].ToString();
             tbnaam.Text = thema["thema"].ToString();
         }
         private void Update_Click(object sender, RoutedEventArgs e)
