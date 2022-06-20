@@ -158,6 +158,7 @@
         }
         #endregion
 
+        #region combobox
         private void cmbtabel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbtabel.SelectedIndex == 0)
@@ -293,5 +294,6 @@
                 verkiezingsoortbtn.Visibility = Visibility.Visible;
             }
         }
-        }
+        #endregion
     }
+}

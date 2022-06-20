@@ -12,7 +12,7 @@ namespace Project_3.Classes
     class Verkiezingdb
     {
         #region fields
-        MySqlConnection _connection = new MySqlConnection("Server=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
+        MySqlConnection _connection = new MySqlConnection("sServer=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
         #endregion
 
         #region functions
@@ -328,7 +328,7 @@ namespace Project_3.Classes
             }
             return succes;
             }
-                    public bool DeleteThema(string id)
+        public bool DeleteThema(string id)
         {
             bool succes = false;
             try
@@ -350,10 +350,8 @@ namespace Project_3.Classes
             }
             return succes;
         }
-            #endregion
+        #endregion
 
-            #endregion
-        }
-
+        #endregion
     }
 }
