@@ -327,11 +327,8 @@ namespace Project_3.Classes
                 _connection.Close();
             }
             return succes;
-            #endregion
-
-            #endregion
-        }
-        public bool DeleteThema(string id)
+            }
+                    public bool DeleteThema(string id)
         {
             bool succes = false;
             try
@@ -353,5 +350,10 @@ namespace Project_3.Classes
             }
             return succes;
         }
+            #endregion
+
+            #endregion
+        }
+
     }
 }

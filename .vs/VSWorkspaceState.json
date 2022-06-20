@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Project 3",
-    "\\Project 3\\Project 3"
+    "\\Project 3\\Project 3",
+    "\\Project 3\\Project 3\\Classes"
   ],
-  "SelectedNode": "\\Project 3\\Project 3\\EditThema.xaml.cs",
+  "SelectedNode": "\\Project 3\\Project 3\\Classes\\Verkiezingdb.cs",
   "PreviewInSolutionExplorer": false
 }
