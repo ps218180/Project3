@@ -77,3 +77,7 @@ C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Them
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\Themacreate.baml
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditThema.g.cs
 C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditThema.baml
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\verkiezingsoortCreate.g.cs
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\verkiezingsoortCreate.baml
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditVerkiezingsoort.g.cs
+C:\Users\thoma\Source\Repos\ps218180\Project3\Project 3\Project 3\obj\Debug\EditVerkiezingsoort.baml

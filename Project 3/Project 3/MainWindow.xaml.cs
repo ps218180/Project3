@@ -98,6 +98,12 @@
             create.Show();
             themagrid();
         }
+        private void CreateVerkiezingsoort_Click(object sender, RoutedEventArgs e)
+        {
+            verkiezingsoortCreate create = new verkiezingsoortCreate();
+            create.Show();
+            verkiezingsoortgrid();
+        }
         #endregion
 
         #region update
@@ -124,6 +130,14 @@
             EditThema edit = new EditThema(selectedRow);
             edit.ShowDialog();
             themagrid();
+        }
+        private void UpdateVerkiezingsoort_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgVerkiezingsoort.SelectedItem as DataRowView;
+
+            EditVerkiezingsoort edit = new EditVerkiezingsoort(selectedRow);
+            edit.ShowDialog();
+            verkiezingsoortgrid();
         }
         #endregion
 
@@ -153,6 +167,20 @@
             else
             {
                 MessageBox.Show($"Verwijderen van {selectedRow["thema_id"]} mislukt");
+            }
+            themagrid();
+        }
+        private void DeleteVerkiezingsoort_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dgVerkiezingsoort.SelectedItem as DataRowView;
+
+            if (Verkiezingdb.DeleteVerkiezingsoort(selectedRow["verkiezingsoort_id"].ToString()))
+            {
+                MessageBox.Show($"team {selectedRow["verkiezingsoort_id"]} verwijderd");
+            }
+            else
+            {
+                MessageBox.Show($"Verwijderen van {selectedRow["verkiezingsoort_id"]} mislukt");
             }
             themagrid();
         }

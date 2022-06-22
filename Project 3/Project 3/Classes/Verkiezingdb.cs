@@ -12,7 +12,7 @@ namespace Project_3.Classes
     class Verkiezingdb
     {
         #region fields
-        MySqlConnection _connection = new MySqlConnection("sServer=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
+        MySqlConnection _connection = new MySqlConnection("Server=localhost;Database=verkiezingenprj3;Uid=root;Pwd=;");
         #endregion
 
         #region functions
@@ -224,6 +224,28 @@ namespace Project_3.Classes
             }
             return succes;
         }
+        public bool InsertVerkiezingsoort(string verkiezingsoort)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO `verkiezingsoort` (`verkiezingsoort`) VALUES (@verkiezingsoort);";
+                command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                succes = (nrOfRowsAffected != 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+        }
         #endregion
 
         #region update
@@ -303,10 +325,33 @@ namespace Project_3.Classes
             }
             return succes;
         }
-        #endregion
+        public bool UpdateVerkiezingsoort(int verkiezingsoort_id, string verkiezingsoort)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "UPDATE `verkiezingsoort` SET `verkiezingsoort` = @verkiezingsoort WHERE `verkiezingsoort`.`verkiezingsoort_id` = @verkiezingsoort_id;";
+                command.Parameters.AddWithValue("@verkiezingsoort_id", verkiezingsoort_id);
+                command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);
+                int nraffected = command.ExecuteNonQuery();
+                succes = (nraffected != 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+        }
+            #endregion
 
-        #region delete
-        public bool DeletePartij(string id)
+            #region delete
+            public bool DeletePartij(string id)
         {
             bool succes = false;
             try
@@ -337,6 +382,28 @@ namespace Project_3.Classes
                 MySqlCommand command = _connection.CreateCommand();
                 command.CommandText = "DELETE FROM `thema` WHERE `thema`.`thema_id` = @thema_id;";
                 command.Parameters.AddWithValue("@thema_id", id);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                succes = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verwijder of pas eerst de drivers aan die bijhoorend zijn bij het team dat u wilt verwijderen");
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return succes;
+        }
+        public bool DeleteVerkiezingsoort(string id)
+        {
+            bool succes = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "DELETE FROM `verkiezingsoort` WHERE `verkiezingsoort`.`verkiezingsoort_id` = @verkiezingsoort_id;";
+                command.Parameters.AddWithValue("@verkiezingsoort_id", id);
                 int nrOfRowsAffected = command.ExecuteNonQuery();
                 succes = (nrOfRowsAffected != 0);
             }

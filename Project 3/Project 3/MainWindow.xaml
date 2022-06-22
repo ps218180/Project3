@@ -148,19 +148,19 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Wijzig"/>
+                            <Button Content="Wijzig" Click="UpdateVerkiezingsoort_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Verwijder"/>
+                            <Button Content="Verwijder" Click="DeleteVerkiezingsoort_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="verkiezingsoortbtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden"/>
+        <Button x:Name="verkiezingsoortbtn" Grid.Row="1" Grid.Column="1" Content="Maak aan" Visibility="Hidden" Click="CreateVerkiezingsoort_Click"/>
     </Grid>
 </Window>
